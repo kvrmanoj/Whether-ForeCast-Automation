@@ -1,7 +1,6 @@
 package webdriverconfiguration;
 
 import java.util.InputMismatchException;
-
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -52,10 +51,8 @@ public class LocalDriverSetup implements DriverSetup{
 	@Override
 	public WebDriver getDriver(Browser browser) {
 	switch(browser){
-		case Chrome:
-			String path=System.getProperty("user.dir");
-			System.setProperty("webdriver.chrome.driver", path+"//chromedriver");			
-			driver=new ChromeDriver(getDriverCapability(browser));
+		case Chrome:		
+			driver=new ChromeDriver(getDriverCapability(Browser.Chrome));
 			break;
 		case Firefox:
 			FirefoxOptions p=new FirefoxOptions();
